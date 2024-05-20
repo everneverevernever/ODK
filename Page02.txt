@@ -1,0 +1,47 @@
+<Page x:Class="ODKAccounting.Page02"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+      mc:Ignorable="d"
+      d:DesignWidth="1920" Title="02 Выдача ОДК со склада">
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="8*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Border Margin="0, 50" BorderBrush="Black" Background="White" BorderThickness="1" Grid.Column="1">
+                <StackPanel VerticalAlignment="Top">
+                    <Label Content="02 Выдача ОДК со склада" HorizontalAlignment="Left" Margin="15 20 0 0" VerticalAlignment="Top" Height="40" FontSize="25"/>
+                    <Label Content="Выберите склад*" Margin="15 5 0 0" Style="{StaticResource Labels}" />
+                    <ComboBox x:Name="WarehourseSelector" Style="{StaticResource CBInput}"/>
+                    <Label Content="Выберите подрядчика*" Style="{StaticResource Labels}" />
+                    <ComboBox x:Name="ContractorSelector" Style="{StaticResource CBInput}"/>
+                    <Label Content="Выберите мероприятие из адресной программы*" Style="{StaticResource Labels}"/>
+                    <ComboBox x:Name="EventSelector" Style="{StaticResource CBInput}"/>
+                    <Label Content="Выберите ОДК*" Style="{StaticResource Labels}"/>
+                    <ComboBox x:Name="ODKSelector" Style="{StaticResource CBInput}"/>
+                    <DataGrid Name="DisplayGrid" Height="206" Margin="16,50,16,0" VerticalAlignment="Top" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="*" Binding="{Binding warhouse}" Header="Склад" />
+                            <DataGridTextColumn Width="*" Binding="{Binding contactor}" Header="Подрядчик" />
+                            <DataGridTextColumn Width="*" Binding="{Binding event }" Header="Мероприятие" />
+                            <DataGridTextColumn Width="*" Binding="{Binding ODK}" Header="ОДК" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Grid Margin="0 20 0 0" VerticalAlignment="Bottom">
+                        <Button Content="Назад" Style="{StaticResource ActionButton}" Click="GoMain" HorizontalAlignment="Left" />
+                        <Button Content="Отправить" Style="{StaticResource ActionButton}" Click="SaveData" HorizontalAlignment="Right"/>
+                    </Grid>
+                    <Grid Margin="0 0 0 20" VerticalAlignment="Bottom">
+                        <Button Content="&gt;" HorizontalAlignment="Right" Margin="0,0,10,0" Click="GoForward" Style="{StaticResource ForwardBackward}"/>
+                        <Button Content="&lt;" HorizontalAlignment="Right" Margin="0,0,52,0" Click="GoBack" Style="{StaticResource ForwardBackward}"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+</Page>
+

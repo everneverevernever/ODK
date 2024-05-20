@@ -1,0 +1,60 @@
+<Page x:Class="ODKAccounting.Page12_1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      d:DesignWidth="1920"
+	Title="Page12_3">
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="8*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Border Margin="0, 50" BorderBrush="Black" Background="White" BorderThickness="1" Grid.Column="1">
+                <StackPanel VerticalAlignment="Top">
+                    <Label Content="12.1 Создание новых ОДК и элементов" HorizontalAlignment="Left" Margin="15 20 0 0" VerticalAlignment="Top" Height="40" FontSize="25"/>
+                    <Label Content="Введите название типа ОДК*" Margin="15 5 0 0" Style="{StaticResource Labels}" />
+                    <TextBox x:Name="WarehourseSelector" Style="{StaticResource TBInput}"/>
+                    <Grid HorizontalAlignment="Center" Margin="0 30 0 0">
+                        <Label Content="Долг поставщика:" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="186" FontSize="20"/>
+                        <Label Content="Эталонное фото" HorizontalAlignment="Left" Margin="0,37,0,0" VerticalAlignment="Top" Width="204" Height="40" FontSize="20" Foreground="Black" FontWeight="Bold"/>
+
+                        <Button Content="Добавить" HorizontalAlignment="Left" Margin="0,77,0,0" VerticalAlignment="Top" Width="186" Height="40" FontSize="25" Click="ImageSelect"/>
+                        <Label Content="Файлов:0" HorizontalAlignment="Left" Margin="0,117,0,0" VerticalAlignment="Top" Width="100" Height="35" FontWeight="Bold" FontSize="16"/>
+
+                        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="225" Margin="266,0,0,0" VerticalAlignment="Top" Width="563">
+                            <Image x:Name="imgPhoto"/>
+                        </Border>
+                    </Grid>
+                    <Label Content="Элементы ОДК" Style="{StaticResource Labels}" />
+                    <DataGrid x:Name="ComponentsGrid" Margin="15" Height="500" CanUserAddRows="True" ItemsSource="{Binding}" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Название элемента ОДК" Binding="{Binding name}"/>
+                            <DataGridTextColumn Header="Количество элемента в ОДК"/>
+                            <DataGridTextColumn Header="Единицы измерения"/>
+                            <!--DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button FontSize="15" Click="AddComponent">Добавить</Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn-->
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Grid Margin="0 20 0 0" VerticalAlignment="Bottom">
+                        <Button Content="Назад" Style="{StaticResource ActionButton}" Click="GoMain" HorizontalAlignment="Left" />
+                        <Button Content="Отправить" Style="{StaticResource ActionButton}" Click="SaveData" HorizontalAlignment="Right"/>
+                    </Grid>
+                    <Grid Margin="0 0 0 20" VerticalAlignment="Bottom">
+                        <Button Content="&gt;" HorizontalAlignment="Right" Margin="0,0,10,0" Click="GoForward" Style="{StaticResource ForwardBackward}"/>
+                        <Button Content="&lt;" HorizontalAlignment="Right" Margin="0,0,52,0" Click="GoBack" Style="{StaticResource ForwardBackward}"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+</Page>
+

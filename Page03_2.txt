@@ -1,0 +1,61 @@
+<Page x:Class="ODKAccounting.Page03_2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      d:DesignWidth="1920"
+	Title="03.2 Приёмка монтажа">
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="8*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Border Margin="0, 50" BorderBrush="Black" Background="White" BorderThickness="1" Grid.Column="1">
+                <StackPanel VerticalAlignment="Top">
+                    <Label Content="03.2 Приёмка монтажа" HorizontalAlignment="Left" Margin="15 20 0 0" VerticalAlignment="Top" Height="40" FontSize="25"/>
+                    <Label Content="Подрядчик*" Margin="15 5 0 0" Style="{StaticResource Labels}" />
+                    <ComboBox x:Name="ContractorSelector" Style="{StaticResource CBInput}"/>
+                    <Label Content="Выберите адрес*" Style="{StaticResource Labels}" />
+                    <TextBox x:Name="AdressInput" Style="{StaticResource TBInput}"/>
+                    <Label Content="Выберите ОДК*" Style="{StaticResource Labels}"/>
+                    <ComboBox x:Name="ODKSelector" Style="{StaticResource CBInput}"/>
+                    <Label Content="Точка подлючения*" Style="{StaticResource Labels}"/>
+                    <TextBox x:Name="ConnInput" Style="{StaticResource TBInput}"/>
+                    <Label Content="Адрес установки автоматического выключателя, коммутирующего ОДК*" Style="{StaticResource Labels}"/>
+                    <TextBox x:Name="SwitchAddrInput" Style="{StaticResource TBInput}"/>
+                    <CheckBox Content="Возможность подключения ДГУ или бензогенератора" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top" FontSize="20" Width="527" Height="30"/>
+                    <Label Content="Административный округ г.  Москвы установки ОДК*" Style="{StaticResource Labels}"/>
+                    <TextBox x:Name="RegionInput" Style="{StaticResource TBInput}"/>
+                    <Label Content="Ответственный РЭС*" Style="{StaticResource Labels}"/>
+                    <TextBox x:Name="RESInput" Style="{StaticResource TBInput}"/>
+                    <Label Content="Ответственный подрядчик ФИО*" Style="{StaticResource Labels}"/>
+                    <TextBox x:Name="ContractorNameInput" Style="{StaticResource TBInput}"/>
+                    <Label Content="Ответственный подрядчик телефон*" Style="{StaticResource Labels}"/>
+                    <TextBox x:Name="ContractorNumberInput" Style="{StaticResource TBInput}"/>
+                    <Label Content="Количество ОДК*" Style="{StaticResource Labels}"/>
+                    <TextBox x:Name="Kol_ODK" Style="{StaticResource TBInput}"/>
+                    <Label Content="% выполнения монтажа*" Style="{StaticResource Labels}"/>
+                    <TextBox x:Name="NumODKInput" Style="{StaticResource TBInput}"/>
+                    <Label Content="Режим работы ОДК по плану" Style="{StaticResource Labels}"/>
+                    <TextBox x:Name="PlannedODKModeInput" Style="{StaticResource TBInput}"/>
+                    <Label Content="Режим работы ОДК по факту" Style="{StaticResource Labels}"/>
+                    <TextBox x:Name="ODKModeInput" Style="{StaticResource TBInput}"/>
+                    <Label Content="Выберите планируемую дату монтажа*" Style="{StaticResource Labels}"/>
+                    <DatePicker x:Name="DateSelector" Style="{StaticResource DPInput}"/>
+                    <Grid Margin="0 20 0 0" VerticalAlignment="Bottom">
+                        <Button Content="Назад" Style="{StaticResource ActionButton}" Click="GoMain" HorizontalAlignment="Left" />
+                        <Button Content="Отправить" Style="{StaticResource ActionButton}" Click="SaveData" HorizontalAlignment="Right"/>
+                    </Grid>
+                    <Grid Margin="0 0 0 20" VerticalAlignment="Bottom">
+                        <Button Content="&gt;" HorizontalAlignment="Right" Margin="0,0,10,0" Click="GoForward" Style="{StaticResource ForwardBackward}"/>
+                        <Button Content="&lt;" HorizontalAlignment="Right" Margin="0,0,52,0" Click="GoBack" Style="{StaticResource ForwardBackward}"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+</Page>
+
